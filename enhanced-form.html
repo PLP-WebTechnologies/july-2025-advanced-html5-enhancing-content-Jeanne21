@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enhanced Form Assignment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    header, footer {
+      background-color: #f0f0f0;
+      padding: 15px;
+      text-align: center;
+    }
+    section {
+      margin-top: 30px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      margin-right: 15px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    legend {
+      font-weight: bold;
+    }
+    table, th, td {
+      border: 1px solid #999;
+      border-collapse: collapse;
+      padding: 8px;
+      text-align: left;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    input[type="radio"] {
+        margin-right: 5px;
+    }
+    .inline-options {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin-top: 5px;
+    }
+
+    .inline-options label {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Enhanced HTML5 Web Page</h1>
+    <p>Showcasing Media, Lists, Tables, and a Complete Form</p>
+  </header>
+
+  <main>
+    <!-- Section: Media, Lists, Tables -->
+    <section>
+        <h2>About Me</h2>
+        <h3>My Hobbies</h3>
+        <ul>
+            <li>Baking</li>
+            <li>Traveling</li>
+            <li>Reading Tech Blogs</li>
+        </ul>
+
+        <h3>Steps I Follow in a Project</h3>
+        <ol>
+            <li>Research and Planning</li>
+            <li>Design</li>
+            <li>Implementation</li>
+            <li>Testing and Deployment</li>
+        </ol>
+
+        <h3>Courses I've Taken</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Course</th>
+                    <th>Duration</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Web Development</td>
+                    <td>3 months</td>
+                    <td>Completed</td>
+                </tr>
+                <tr>
+                    <td>Database Design</td>
+                    <td>2 months</td>
+                    <td>Ongoing</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Media Example</h3>
+        <img src="image1.jpg" alt="Placeholder Image of a Project Banner" width="300px" height="300px"/>
+        <p>Listen to relaxing background music while browsing:</p>
+        <audio controls>
+            <source src="Sonder(chosic.com).mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        </section>
+
+    <!-- Section: Form -->
+    <section>
+        <h2>Registration Form</h2>
+        <form action="#" method="POST" autocomplete="on">
+
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required minlength="2" placeholder="e.g. John Doe" />
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com" />
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required pattern="^\d{10}$" placeholder="10-digit number only" />
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required />
+
+                <label for="gender">Gender:</label>
+                <div class="inline-options">
+                    <label for="male">
+                        <input type="radio" id="male" name="gender" value="Male" required />
+                        Male
+                    </label>
+                    <label for="female">
+                        <input type="radio" id="female" name="gender" value="Female" />
+                        Female
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Course Selection</legend>
+
+                <label for="course">Choose a course:</label>
+                <select id="course" name="course" required>
+                    <option value="">-- Select a Course --</option>
+                    <option value="html">HTML Basics</option>
+                    <option value="css">CSS Styling</option>
+                    <option value="js">JavaScript Essentials</option>
+                </select>
+
+                <label>Preferred Mode of Contact:</label>
+                <div class="inline-options">
+                    <label for="contactEmail">
+                        <input type="checkbox" id="contactEmail" name="contact[]" value="Email" />
+                        Email
+                    </label>
+                    <label for="contactPhone">
+                        <input type="checkbox" id="contactPhone" name="contact[]" value="Phone" />
+                        Phone
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Account Details</legend>
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required pattern="[A-Za-z0-9]{4,}" placeholder="At least 4 characters, letters/numbers only" />
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required minlength="6" placeholder="Minimum 6 characters" />
+
+                <label for="confirm">Confirm Password:</label>
+                <input type="password" id="confirm" name="confirm" required minlength="6" />
+            </fieldset>
+
+            <fieldset>
+                <legend>Other Info</legend>
+
+                <label for="bio">Short Bio:</label>
+                <textarea id="bio" name="bio" rows="4" placeholder="Tell us a bit about yourself..."></textarea>
+
+                <label for="color">Favorite Color:</label>
+                <input type="text" id="color" name="color" value="Blue" readonly />
+            </fieldset>
+
+            <br />
+            <button type="submit">Submit Form</button>
+        </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Enhanced HTML5 Form Assignment</p>
+  </footer>
+
+</body>
+</html>
